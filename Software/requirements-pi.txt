@@ -1,0 +1,6 @@
+# Raspberry Pi specific dependencies
+# Install this on the Raspberry Pi only
+picamera2>=0.3.12
+requests>=2.31.0
+pillow>=10.0.0
+
