@@ -66,7 +66,7 @@ def analyze_terrain():
 
         # Find craters
         print("Detecting craters...")
-        craters = analyzer.find_craters(processed, min_radius=15, max_radius=150)
+        craters = analyzer.find_craters(processed, min_radius=15, max_radius=60)
         print(f"Found {len(craters)} craters")
 
         # Calculate navigation instructions
@@ -149,6 +149,7 @@ def create_visualization(image_path, results, output_path=None):
     # Draw landing site
     if results.get('landing_site'):
         landing = results['landing_site']
+        print(f"This is: {landing}")
         cv2.circle(image, (landing['x'], landing['y']), 30, (0, 255, 0), 3)
         cv2.putText(image, 'LANDING SITE',
                     (landing['x'] - 80, landing['y'] - 40),
